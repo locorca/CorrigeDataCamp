@@ -37,4 +37,12 @@ evalua_df <- evalua_df[order(evalua_df$apellidos), ]
 
 write_xlsx(evalua_df, "NotasRIntermedio.xlsx")
 
+alumnos_oficial <- read_excel("AlumnosTD25_26.xlsx")
+
+alumnos_notas <- merge(alumnos_oficial, evalua_df, 
+                       by.x = "Apellido(s)", by.y = "apellidos", 
+                       all.x = TRUE)
+
+write_xlsx(alumnos_notas, "AlumnosNotas.xlsx")
+
 
