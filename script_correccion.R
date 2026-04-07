@@ -34,3 +34,7 @@ lista_filas <- lapply(ficheros_puntuaciones, function(ruta) {
 
 evalua_df <- do.call(rbind, lista_filas)
 evalua_df <- evalua_df[order(evalua_df$apellidos), ]
+
+write_xlsx(evalua_df, "NotasRIntermedio.xlsx")
+
+
